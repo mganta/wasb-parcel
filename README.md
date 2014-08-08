@@ -8,7 +8,7 @@ This repository provides a parcel(https://github.com/cloudera/cm_ext) to install
 
 Sample steps for repository creation:
 ```sh
-git clone http://github.com/prateek/hadoop_wasb
+git clone http://github.com/prateek/wasb_parcel
 cd hadoop_wasb
 python -m SimpleHTTPServer 14641
 ```
