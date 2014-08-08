@@ -30,7 +30,20 @@ python -m SimpleHTTPServer 14641
 5. Example usage:
 ```sh
 # Hdfs access for CLI or M/R
-hdfs dfs -ls wasb://[CONTAINER]@[STORAGE_ACCOUNT].blob.core.windows.net/
+$ hdfs dfs -ls wasb://[CONTAINER]@[STORAGE_ACCOUNT].blob.core.windows.net/
+
+# Hive table
+$ seq 1 10000 | paste - - - - - - - - -d',' > sample.txt
+$ hdfs dfs -mkdir wasb://[CONTAINER]@[STORAGE_ACCOUNT].blob.core.windows.net/hive-sample
+$ hdfs dfs -put sample.txt wasb://[CONTAINER]@[STORAGE_ACCOUNT].blob.core.windows.net/hive-sample
+$ hive << EOF
+create external table wasb_sample
+( a1 int, a2 int, a3 int, a4 int, a5 int, a6 int, a7 int, a8 int )
+row format delimited
+fields terminated by ','
+location 'wasb://yeahyeahyeah@runningslow.blob.core.windows.net/sample-dir';
+EOF
+$ hive -e 'select count(*) from wasb_sample'
 ```
 
 # References
