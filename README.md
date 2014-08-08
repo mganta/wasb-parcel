@@ -6,10 +6,10 @@ This repository provides a parcel(https://github.com/cloudera/cm_ext) to install
 # Install Steps
 1. Create a local repository to serve this repository. [Detailed Instructions](http://www.cloudera.com/content/cloudera-content/cloudera-docs/CM5/latest/Cloudera-Manager-Installation-Guide/cm5ig_create_local_parcel_repo.html)
 
-Sample steps for repository creation:
+Follow the steps below to serve the repository files, after which follow the instructions in the link above to add the repository to Cloudera Manager.
 ```sh
 git clone http://github.com/prateek/wasb_parcel
-cd hadoop_wasb
+cd wasb_parcel
 python -m SimpleHTTPServer 14641
 ```
 
@@ -25,11 +25,13 @@ python -m SimpleHTTPServer 14641
 
 *Note* Multiple such entries may be added
 
-4. Example usage:
+4. Deploy Client Configs and Restart the cluster.
+
+5. Example usage:
 ```sh
 # Hdfs access for CLI or M/R
 hdfs dfs -ls wasb://[CONTAINER]@[STORAGE_ACCOUNT].blob.core.windows.net/
 ```
 
 # References
-This is a simplified distribution for the great work done by the Azure team: [HADOOP-9629](https://issues.apache.org/jira/browse/HADOOP-9629)
+This is a simplified distribution mechanism for the great work done by the Azure team: [HADOOP-9629](https://issues.apache.org/jira/browse/HADOOP-9629)
