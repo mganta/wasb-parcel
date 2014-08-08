@@ -41,7 +41,7 @@ create external table wasb_sample
 ( a1 int, a2 int, a3 int, a4 int, a5 int, a6 int, a7 int, a8 int )
 row format delimited
 fields terminated by ','
-location 'wasb://yeahyeahyeah@runningslow.blob.core.windows.net/sample-dir';
+location 'wasb://[CONTAINER]@[STORAGE_ACCOUNT].blob.core.windows.net/sample-dir';
 EOF
 $ hive -e 'select count(*) from wasb_sample'
 ```
