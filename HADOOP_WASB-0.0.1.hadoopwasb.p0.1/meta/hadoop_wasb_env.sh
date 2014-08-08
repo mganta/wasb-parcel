@@ -1,0 +1,20 @@
+#!/bin/bash
+HADOOP_WASB_DIRNAME=${PARCEL_DIRNAME:-"HADOOP_WASB-0.0.1.hadoopwasb.p0.1"}
+
+if [ -n "${HADOOP_CLASSPATH}" ]; then
+  export HADOOP_CLASSPATH="${HADOOP_CLASSPATH}:$PARCELS_ROOT/$HADOOP_WASB_DIRNAME/lib/hadoop/lib/*"
+else
+  export HADOOP_CLASSPATH="$PARCELS_ROOT/$HADOOP_WASB_DIRNAME/lib/hadoop/lib/*"
+fi
+
+if [ -n "${MR2_CLASSPATH}" ]; then
+  export MR2_CLASSPATH="${MR2_CLASSPATH}:$PARCELS_ROOT/$HADOOP_WASB_DIRNAME/lib/hadoop/lib/*"
+else
+  export MR2_CLASSPATH="$PARCELS_ROOT/$HADOOP_WASB_DIRNAME/lib/hadoop/lib/*"
+fi
+
+if [ -n "${HIVE_AUX_JARS_PATH}" ]; then
+  export HIVE_AUX_JARS_PATH="${HIVE_AUX_JARS_PATH},$PARCELS_ROOT/$HADOOP_WASB_DIRNAME/lib/hadoop/lib"
+else
+  export HIVE_AUX_JARS_PATH="$PARCELS_ROOT/$HADOOP_WASB_DIRNAME/lib/hadoop/lib"
+fi
