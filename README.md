@@ -8,8 +8,8 @@ This repository provides a parcel(https://github.com/cloudera/cm_ext) to install
 
 Follow the steps below to serve the repository files, after which follow the instructions in the link above to add the repository to Cloudera Manager.
 ```sh
-git clone http://github.com/prateek/wasb_parcel
-cd wasb_parcel
+git clone http://github.com/prateek/wasb-parcel
+cd wasb-parcel
 python -m SimpleHTTPServer 14641
 ```
 
@@ -29,7 +29,7 @@ python -m SimpleHTTPServer 14641
 
 5. Example usage:
 ```sh
-# Hdfs access for CLI or M/R
+# HDFS access for CLI or M/R
 $ hdfs dfs -ls wasb://[CONTAINER]@[STORAGE_ACCOUNT].blob.core.windows.net/
 
 # Hive table
