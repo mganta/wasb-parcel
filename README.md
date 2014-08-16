@@ -65,5 +65,7 @@ textFile.count()
 EOF
 ```
 
+*Note* This does **NOT** currently work with `Impala`.
+
 # References
 This is a simplified distribution mechanism for the great work done by the Azure team: [HADOOP-9629](https://issues.apache.org/jira/browse/HADOOP-9629)
