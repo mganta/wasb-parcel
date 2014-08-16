@@ -60,9 +60,9 @@ $ hive -e 'select count(*) from wasb_sample'
 
 # Access using Spark
 $ spark-shell <<EOF
-val textFile = sc.textFile(
-  "wasb://[CONTAINER]@[STORAGE_ACCOUNT].blob.core.windows.net/sample-dir" )
+val textFile = sc.textFile( "wasb://[CONTAINER]@[STORAGE_ACCOUNT].blob.core.windows.net/sample-dir" )
 textFile.count()
+EOF
 ```
 
 # References
